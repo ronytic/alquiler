@@ -1,0 +1,21 @@
+<?php
+include_once("../login/check.php");
+if(!empty($_POST)){
+	include_once("../class/gasto.php");
+	extract($_POST);
+	$gasto=new gasto;
+	$fechaRegistro=date("Y-m-d");
+	$horaRegistro=date("H:i:s");
+	$values=array("CodGasto"=>"NULL",
+				"Detalle"=>"'$detalle'",
+				"Monto"=>"'$monto'",
+				"FechaGasto"=>"'$fecha'",
+				"Observaciones"=>"'$observaciones'",
+				"FechaRegistro"=>"'$fechaRegistro'",
+				"HoraRegistro"=>"'$horaRegistro'",
+				"Activo"=>1
+				);
+	$gasto->insertarGasto($values);
+	header("Location:../index.php");
+}
+?>

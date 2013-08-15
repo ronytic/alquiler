@@ -1,0 +1,28 @@
+<?php
+include_once("../login/check.php");
+if(!empty($_POST)){
+	extract($_POST);
+	include_once("../class/arrendatario.php");
+	$arrendatario=new arrendatario;
+	$fechaRegistro=date("Y-m-d");
+	$horaRegistro=date("H:i:s");
+	$values=array("CodArrendatario"=>"NULL",
+			"NombreEsposo"=>"'$nombreEsposo'",
+			"CiEsposo"=>"'$ciEsposo'",
+			"NombreEsposa"=>"'$nombreEsposa'",
+			"CiEsposa"=>"'$ciEsposa'",
+			"NombreGarante"=>"'$nombreGarante'",
+			"CiGarante"=>"'$ciGarante'",
+			"FechaIngreso"=>"'$fechaIngreso'",
+			"Monto"=>"'$monto'",
+			"FechaCancela"=>"'$fechaCancela'",
+			"TiempoContrato"=>"'$tiempoContrato'",
+			"Observaciones"=>"'$observaciones'",
+			"FechaRegistro"=>"'$fechaRegistro'",
+			"HoraRegistro"=>"'$horaRegistro'",
+			"Activo"=>"'$nombreEsposo'",
+	);
+	$arrendatario->insertarArrendatario($values);
+	header("Location:../index.php");
+}
+?>

@@ -1,0 +1,27 @@
+<?php
+include_once("../login/check.php");
+if(!empty($_POST)){
+include_once("../class/pago.php");
+$pago=new pago;
+$cod=$_POST['CodArrendatario'];
+$monto=$_POST['Monto'];
+$mes=$_POST['Mes'];
+$anio=$_POST['Anio'];
+$fechaCancelado=$_POST['FechaCancelado'];
+$fecha=date("Y-m-d");
+$fechaRegistro=$fecha;
+$horaRegistro=date("H:i:s");
+$values=array("CodPago"=>"NULL",
+			"CodArrendatario"=>"$cod",
+			"Mes"=>"'$mes'",
+			"Anio"=>"'$anio'",
+			"FechaPago"=>"'$fechaCancelado'",
+			"Monto"=>"'$monto'",
+			"FechaCancelado"=>"'$fecha'",
+			"FechaRegistro"=>"'$fechaRegistro'",
+			"HoraRegistro"=>"'$horaRegistro'",
+			"Activo"=>1
+			);
+$pago->insertarPago($values);
+}
+?>
