@@ -10,7 +10,9 @@ if(!empty($_POST)){
 	$arrendatario=new arrendatario;
 	$fechaInicio=$_POST['FechaInicio'];	
 	$fechaFin=$_POST['FechaFin'];
-	?><table class="tabla"><?php
+	?>
+    <a href="reportetotal.php?FechaInicio=<?php echo $fechaInicio?>&FechaFin=<?php echo $fechaFin?>" class="botonSec" target="_blank">Reporte para Imprimir</a>
+    <table class="tabla"><?php
 	$totalpagos=0;
 	$totalgastos=0;
 	foreach(rangoFechas($fechaInicio,$fechaFin,"+ 1 month",1) as $rfechas){
