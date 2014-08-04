@@ -9,7 +9,7 @@ class gasto extends db{
 		$this->campos=array('*');
 		$condicion=$where?$where.' and ':'';
 		if($cantidad==0)
-			return $this->getRecords($condicion."Activo=1","CodGasto",0,0,0);
+			return $this->getRecords($condicion."Activo=1","FechaGasto",0,0,0);
 		else
 			return $this->getRecords($condicion."Activo=1","CodGasto",0,$cantidad,0);
 	}

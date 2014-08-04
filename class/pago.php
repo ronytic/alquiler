@@ -9,7 +9,7 @@ class pago extends db{
 		$this->campos=array('*');
 		$condicion=$where?$where.' and ':'';
 		if($cantidad==0)
-			return $this->getRecords($condicion."Activo=1","CodPago",0,0,0,1);
+			return $this->getRecords($condicion."Activo=1","CodArrendatario",0,0,0,1);
 		else
 			return $this->getRecords($condicion."Activo=1","CodPago",0,$cantidad,0,1);
 	}
