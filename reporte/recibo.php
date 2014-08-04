@@ -27,6 +27,10 @@ if(!empty($_POST)){
 				array_push($valorConcepto,"Adelanto alquiler mes de ".mb_strtoupper(strftime("%B",strtotime($p['FechaPago'])))." de ".$p['Anio']." | Cancelado: ".date("d/m/Y",strtotime($p['FechaCancelado'])));
 				array_push($valorImporte,$p['Monto']." Bs.");
 				$pagoTotal+=$p['Monto'];
+			}else{
+				array_push($valorConcepto,"Adelanto alquiler mes de ".mb_strtoupper(strftime("%B",strtotime($p['FechaPago'])))." de ".$p['Anio']." | Cancelado: ".date("d/m/Y",strtotime($p['FechaCancelado'])));
+				array_push($valorImporte,$p['Monto']." Bs.");
+				$pagoTotal+=$p['Monto'];	
 			}
 		}
 	}
