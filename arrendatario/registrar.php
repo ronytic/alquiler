@@ -20,7 +20,7 @@ if(!empty($_POST)){
 			"Observaciones"=>"'$observaciones'",
 			"FechaRegistro"=>"'$fechaRegistro'",
 			"HoraRegistro"=>"'$horaRegistro'",
-			"Activo"=>"'$nombreEsposo'",
+			"Activo"=>"'1'",
 	);
 	$arrendatario->insertarArrendatario($values);
 	header("Location:../index.php");
