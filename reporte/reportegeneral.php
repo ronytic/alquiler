@@ -19,7 +19,7 @@ $arrendatario=new arrendatario;
     </div>
 </div>
 <div class="prefix_1 grid_10 suffix_1">
-	<div class="titulo">Listado de Arrendatarios - Recibo</div>
+	<div class="titulo">Listado de Arrendatarios - Reporte General</div>
 	<div class="cuerpo" id="respuesta">
     	
 	</div>
